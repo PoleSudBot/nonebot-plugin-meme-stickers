@@ -1,5 +1,3 @@
-# ruff: noqa: E402
-
 import asyncio
 
 from nonebot import get_driver, logger
@@ -17,9 +15,27 @@ from .utils.operation import format_op
 
 __version__ = "0.2.8"
 __plugin_meta__ = PluginMetadata(
-    name=NAME,
+    name="PJSK表情生成",
     description=DESCRIPTION,
-    usage="使用指令 meme-stickers 查看帮助",
+    usage="""
+🚀 常用指令
+• pjsk / arc
+  └─ 唤起菜单，交互式生成
+• pjsk / arc [序号] [文本]
+  └─ 直接生成
+  示例：`pjsk 1 早上好`
+  示例：`arc 0 晚上好`
+
+🛠️ 样式微调 (追加在指令后)
+• -s [数值]：调整字号 (支持^相对值)
+• -x / -y [数值]：调整横/纵坐标
+• -c [颜色]：文本颜色 (如 red/#FF0)
+• -r [角度]：旋转角度
+• -w [数值]：描边宽度
+
+> 示例：`pjsk 1 测试 -s 60 -c blue`
+> 更多用法请发送: meme-stickers
+""",
     type="application",
     homepage="https://github.com/lgc-NB2Dev/nonebot-plugin-meme-stickers",
     config=ConfigModel,
